@@ -1,0 +1,20 @@
+//
+//  iOS_Kimjiwook-Prefix.pch
+//  iOS_Kimjiwook
+//
+//  Created by kimjiwook on 2018. 4. 11..
+//  Copyright © 2018년 kimjiwook. All rights reserved.
+//
+
+#ifndef iOS_Kimjiwook_Prefix_pch
+#define iOS_Kimjiwook_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* iOS_Kimjiwook_Prefix_pch */
+
+
+/// URL 기본정보.
+#define BASE_URL @"http://www.gettyimagesgallery.com"
+#define BASE_URL_GET_PARAM @"/collections/archive/slim-aarons.aspx"

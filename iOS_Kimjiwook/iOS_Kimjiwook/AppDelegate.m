@@ -17,6 +17,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if ([UIApplication sharedApplication].keyWindow) {
+        self.window = [UIApplication sharedApplication].keyWindow;
+    }else {
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    }
+    
+    // RootViewController 변경하기
+    self.mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
+    [self.window setRootViewController:navigationController];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

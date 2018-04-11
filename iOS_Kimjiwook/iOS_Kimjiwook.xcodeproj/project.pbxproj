@@ -14,6 +14,8 @@
 		EA3DA310207DC665003629D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3DA30F207DC665003629D8 /* Assets.xcassets */; };
 		EA3DA313207DC665003629D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3DA311207DC665003629D8 /* LaunchScreen.storyboard */; };
 		EA3DA316207DC665003629D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA315207DC665003629D8 /* main.m */; };
+		EA3DA324207DF1FA003629D8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA322207DF1FA003629D8 /* MainViewController.m */; };
+		EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3DA323207DF1FA003629D8 /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		EA3DA312207DC665003629D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA3DA314207DC665003629D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA3DA315207DC665003629D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA3DA321207DF1FA003629D8 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EA3DA322207DF1FA003629D8 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		EA3DA323207DF1FA003629D8 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		EA3DA329207DF7BE003629D8 /* iOS_Kimjiwook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS_Kimjiwook-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,9 @@
 			children = (
 				EA3DA306207DC664003629D8 /* AppDelegate.h */,
 				EA3DA307207DC664003629D8 /* AppDelegate.m */,
+				EA3DA327207DF6A1003629D8 /* VM */,
+				EA3DA326207DF692003629D8 /* Protocol */,
+				EA3DA32A207DF8EB003629D8 /* ViewController */,
 				EA3DA309207DC664003629D8 /* ViewController.h */,
 				EA3DA30A207DC664003629D8 /* ViewController.m */,
 				EA3DA30C207DC664003629D8 /* Main.storyboard */,
@@ -83,8 +92,33 @@
 				EA3DA311207DC665003629D8 /* LaunchScreen.storyboard */,
 				EA3DA314207DC665003629D8 /* Info.plist */,
 				EA3DA315207DC665003629D8 /* main.m */,
+				EA3DA329207DF7BE003629D8 /* iOS_Kimjiwook-Prefix.pch */,
 			);
 			path = iOS_Kimjiwook;
+			sourceTree = "<group>";
+		};
+		EA3DA326207DF692003629D8 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		EA3DA327207DF6A1003629D8 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		EA3DA32A207DF8EB003629D8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA3DA321207DF1FA003629D8 /* MainViewController.h */,
+				EA3DA322207DF1FA003629D8 /* MainViewController.m */,
+				EA3DA323207DF1FA003629D8 /* MainViewController.xib */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		F9C4CF34116A95B0DC70B11B /* Frameworks */ = {
@@ -158,6 +192,7 @@
 				EA3DA313207DC665003629D8 /* LaunchScreen.storyboard in Resources */,
 				EA3DA310207DC665003629D8 /* Assets.xcassets in Resources */,
 				EA3DA30E207DC664003629D8 /* Main.storyboard in Resources */,
+				EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +257,7 @@
 				EA3DA30B207DC664003629D8 /* ViewController.m in Sources */,
 				EA3DA316207DC665003629D8 /* main.m in Sources */,
 				EA3DA308207DC664003629D8 /* AppDelegate.m in Sources */,
+				EA3DA324207DF1FA003629D8 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +399,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOS_Kimjiwook/iOS_Kimjiwook-Prefix.pch";
 				INFOPLIST_FILE = iOS_Kimjiwook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.-.iOS-Kimjiwook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,8 +419,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iOS_Kimjiwook/iOS_Kimjiwook-Prefix.pch";
 				INFOPLIST_FILE = iOS_Kimjiwook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.-.iOS-Kimjiwook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
