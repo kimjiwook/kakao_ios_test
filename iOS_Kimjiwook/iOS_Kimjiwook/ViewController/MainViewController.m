@@ -10,6 +10,8 @@
 #import "ProtocolList.h"
 #import "ViewModel.h"
 
+#import "MainTableViewCell.h"
+
 @interface MainViewController () {
     NSMutableArray *dataList;
     ProtocolList *protocolList;
@@ -68,63 +70,41 @@
 
 // 테이블뷰 Cell 크기 고정
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    return UITableViewAutomaticDimension;
 }
-//
-//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
-//}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *cellIdentifier = @"Cell";
-
-//    MSGMainListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    if (!cell) {
-//        [tableView registerNib:[UINib nibWithNibName:@"MSGMainListTableViewCell" bundle:nil] forCellReuseIdentifier:cellIdentifier];
-//        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-//    }
-//    cell.boxType = boxType;
-//    cell.delegate = self;
-//    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-//    [cell setBackgroundColor:[UIColor clearColor]];
-//    NSMutableDictionary *cellDic = [[tableArray objectAtIndex:indexPath.row] mutableCopy];
-//
-//    [cell road:cellDic indexPath:indexPath isEdit:isEdit checkList:checklist fromAndTo:@"" fromAndToHide:YES];
-//
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    static NSString *cellIdentifier = @"MainTableViewCell";
+    
+    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        [tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:cellIdentifier];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     }
     
     // 데이터.
     ViewModel *vm = [dataList objectAtIndex:indexPath.row];
     
-    [[ImageCache instance] loadFromUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,vm.thumImageURL] callback:^(UIImage *image) {
-        cell.imageView.image = image;
-    }];
+    // Cell 꾸미기.
+    cell.lbTitle.text = vm.caption;
     
-    cell.textLabel.text = vm.caption;
+    // 재사용 되는 부분 확인해야할듯.
+    cell.imgView.image = [UIImage imageNamed:@"noimage"];
+    [[ImageCache instance] loadFromUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,vm.thumImageURL] callback:^(UIImage *image) {
+        cell.imgView.image = image;
+    }];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    if (isEdit) {
-//        [self editCheckAddIndex:indexPath.row];
-//    } else {
-//        if ([_delegate respondsToSelector:@selector(goDetailView:)]) {
-//            NSMutableDictionary *dic = [tableArray[indexPath.row] mutableCopy];
-//            [_delegate goDetailView:@{@"msgId":dic[@"msgId"], @"msgType":dic[@"msgType"],@"secuYn":dic[@"secuYn"],@"searchType":@"2"}];
-//            // 1) 해당 읽은 리스트를 로컬단으로 읽음처리 표시 해줍니다.
-//            if ([_delegate respondsToSelector:@selector(readYnMSGIds:)]) {
-//                [_delegate readYnMSGIds:@[@{@"msgId":dic[@"msgId"],@"msgType":dic[@"msgType"]}]];
-//            }
-//
-//        }
-//    }
 }
 
 
