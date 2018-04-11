@@ -16,6 +16,8 @@
 		EA3DA316207DC665003629D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA315207DC665003629D8 /* main.m */; };
 		EA3DA324207DF1FA003629D8 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA322207DF1FA003629D8 /* MainViewController.m */; };
 		EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3DA323207DF1FA003629D8 /* MainViewController.xib */; };
+		EA3DA32D207DF991003629D8 /* ProtocolList.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA32C207DF991003629D8 /* ProtocolList.m */; };
+		EA3DA330207DFC4E003629D8 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA32F207DFC4E003629D8 /* ViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,10 @@
 		EA3DA322207DF1FA003629D8 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		EA3DA323207DF1FA003629D8 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		EA3DA329207DF7BE003629D8 /* iOS_Kimjiwook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOS_Kimjiwook-Prefix.pch"; sourceTree = "<group>"; };
+		EA3DA32B207DF991003629D8 /* ProtocolList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolList.h; sourceTree = "<group>"; };
+		EA3DA32C207DF991003629D8 /* ProtocolList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolList.m; sourceTree = "<group>"; };
+		EA3DA32E207DFC4E003629D8 /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		EA3DA32F207DFC4E003629D8 /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,7 @@
 				EA3DA306207DC664003629D8 /* AppDelegate.h */,
 				EA3DA307207DC664003629D8 /* AppDelegate.m */,
 				EA3DA327207DF6A1003629D8 /* VM */,
+				EA3DA331207DFCAE003629D8 /* Util */,
 				EA3DA326207DF692003629D8 /* Protocol */,
 				EA3DA32A207DF8EB003629D8 /* ViewController */,
 				EA3DA309207DC664003629D8 /* ViewController.h */,
@@ -100,6 +107,8 @@
 		EA3DA326207DF692003629D8 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				EA3DA32B207DF991003629D8 /* ProtocolList.h */,
+				EA3DA32C207DF991003629D8 /* ProtocolList.m */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -107,6 +116,8 @@
 		EA3DA327207DF6A1003629D8 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				EA3DA32E207DFC4E003629D8 /* ViewModel.h */,
+				EA3DA32F207DFC4E003629D8 /* ViewModel.m */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -119,6 +130,13 @@
 				EA3DA323207DF1FA003629D8 /* MainViewController.xib */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		EA3DA331207DFCAE003629D8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		F9C4CF34116A95B0DC70B11B /* Frameworks */ = {
@@ -254,10 +272,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3DA330207DFC4E003629D8 /* ViewModel.m in Sources */,
 				EA3DA30B207DC664003629D8 /* ViewController.m in Sources */,
 				EA3DA316207DC665003629D8 /* main.m in Sources */,
 				EA3DA308207DC664003629D8 /* AppDelegate.m in Sources */,
 				EA3DA324207DF1FA003629D8 /* MainViewController.m in Sources */,
+				EA3DA32D207DF991003629D8 /* ProtocolList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,9 @@
 
 #endif /* iOS_Kimjiwook_Prefix_pch */
 
+/// 기본 import 항목
+#import <AFNetworking/AFNetworking.h>
+#import <HTMLReader.h>
 
 /// URL 기본정보.
 #define BASE_URL @"http://www.gettyimagesgallery.com"

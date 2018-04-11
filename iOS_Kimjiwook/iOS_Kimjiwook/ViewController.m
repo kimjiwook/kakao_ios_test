@@ -7,11 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <AFNetworking/AFNetworking.h>
-#import <HTMLReader.h>
 
-#define BASE_URL @"http://www.gettyimagesgallery.com"
-#define BASE_URL_GET_PARAM @"/collections/archive/slim-aarons.aspx"
+#import "ProtocolList.h"
 
 
 @interface ViewController ()
