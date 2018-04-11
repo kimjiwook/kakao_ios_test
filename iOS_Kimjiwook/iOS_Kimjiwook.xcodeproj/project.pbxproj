@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0240895C927CB7BCE202B1A4 /* libPods-iOS_Kimjiwook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A59556B588FEA8B81C20D0 /* libPods-iOS_Kimjiwook.a */; };
 		EA3DA308207DC664003629D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA307207DC664003629D8 /* AppDelegate.m */; };
 		EA3DA30B207DC664003629D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA30A207DC664003629D8 /* ViewController.m */; };
 		EA3DA30E207DC664003629D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3DA30C207DC664003629D8 /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64ABA12E8CAD2831A0FCF418 /* Pods-iOS_Kimjiwook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Kimjiwook.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Kimjiwook/Pods-iOS_Kimjiwook.release.xcconfig"; sourceTree = "<group>"; };
+		703E42B3313DC31536600EDC /* Pods-iOS_Kimjiwook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Kimjiwook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS_Kimjiwook/Pods-iOS_Kimjiwook.debug.xcconfig"; sourceTree = "<group>"; };
+		E5A59556B588FEA8B81C20D0 /* libPods-iOS_Kimjiwook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS_Kimjiwook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3DA303207DC664003629D8 /* iOS_Kimjiwook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Kimjiwook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3DA306207DC664003629D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA3DA307207DC664003629D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0240895C927CB7BCE202B1A4 /* libPods-iOS_Kimjiwook.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A213655CEFE25DD17FAEFD60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				703E42B3313DC31536600EDC /* Pods-iOS_Kimjiwook.debug.xcconfig */,
+				64ABA12E8CAD2831A0FCF418 /* Pods-iOS_Kimjiwook.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EA3DA2FA207DC664003629D8 = {
 			isa = PBXGroup;
 			children = (
 				EA3DA305207DC664003629D8 /* iOS_Kimjiwook */,
 				EA3DA304207DC664003629D8 /* Products */,
+				A213655CEFE25DD17FAEFD60 /* Pods */,
+				F9C4CF34116A95B0DC70B11B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +87,14 @@
 			path = iOS_Kimjiwook;
 			sourceTree = "<group>";
 		};
+		F9C4CF34116A95B0DC70B11B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5A59556B588FEA8B81C20D0 /* libPods-iOS_Kimjiwook.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA3DA319207DC665003629D8 /* Build configuration list for PBXNativeTarget "iOS_Kimjiwook" */;
 			buildPhases = (
+				1314C3CD24F9E3E2B0C2C62B /* [CP] Check Pods Manifest.lock */,
 				EA3DA2FF207DC664003629D8 /* Sources */,
 				EA3DA300207DC664003629D8 /* Frameworks */,
 				EA3DA301207DC664003629D8 /* Resources */,
+				E9F51E8EAF3E3F8ECBACD284 /* [CP] Embed Pods Frameworks */,
+				127BF9293A9E6601D3D99A40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		127BF9293A9E6601D3D99A40 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Kimjiwook/Pods-iOS_Kimjiwook-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1314C3CD24F9E3E2B0C2C62B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS_Kimjiwook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9F51E8EAF3E3F8ECBACD284 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS_Kimjiwook/Pods-iOS_Kimjiwook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EA3DA2FF207DC664003629D8 /* Sources */ = {
@@ -281,14 +359,12 @@
 		};
 		EA3DA31A207DC665003629D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 703E42B3313DC31536600EDC /* Pods-iOS_Kimjiwook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iOS_Kimjiwook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.-.iOS-Kimjiwook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -297,14 +373,12 @@
 		};
 		EA3DA31B207DC665003629D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64ABA12E8CAD2831A0FCF418 /* Pods-iOS_Kimjiwook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = iOS_Kimjiwook/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-.-.iOS-Kimjiwook";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
