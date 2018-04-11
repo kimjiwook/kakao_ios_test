@@ -15,6 +15,7 @@
         _detailURL = @"";
         _thumImageURL = @"";
         _caption = @"";
+        _thumImage = nil;
     }
     return self;
 }
@@ -24,6 +25,7 @@
     vm->_detailURL = self->_detailURL;
     vm->_thumImageURL = self->_thumImageURL;
     vm->_caption = self->_caption;
+    vm->_thumImage = self->_thumImage;
     return vm;
 }
 @end

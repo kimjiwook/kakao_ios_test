@@ -18,6 +18,8 @@
 		EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3DA323207DF1FA003629D8 /* MainViewController.xib */; };
 		EA3DA32D207DF991003629D8 /* ProtocolList.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA32C207DF991003629D8 /* ProtocolList.m */; };
 		EA3DA330207DFC4E003629D8 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA32F207DFC4E003629D8 /* ViewModel.m */; };
+		EA7D3270207E2466000D6ACC /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7D326F207E2466000D6ACC /* ImageCache.m */; };
+		EA7D3273207E2680000D6ACC /* noimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7D3272207E2680000D6ACC /* noimage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		EA3DA32C207DF991003629D8 /* ProtocolList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtocolList.m; sourceTree = "<group>"; };
 		EA3DA32E207DFC4E003629D8 /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
 		EA3DA32F207DFC4E003629D8 /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
+		EA7D326E207E2466000D6ACC /* ImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
+		EA7D326F207E2466000D6ACC /* ImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
+		EA7D3272207E2680000D6ACC /* noimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noimage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				EA3DA305207DC664003629D8 /* iOS_Kimjiwook */,
+				EA7D3271207E2669000D6ACC /* Image */,
 				EA3DA304207DC664003629D8 /* Products */,
 				A213655CEFE25DD17FAEFD60 /* Pods */,
 				F9C4CF34116A95B0DC70B11B /* Frameworks */,
@@ -135,8 +141,18 @@
 		EA3DA331207DFCAE003629D8 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				EA7D326E207E2466000D6ACC /* ImageCache.h */,
+				EA7D326F207E2466000D6ACC /* ImageCache.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		EA7D3271207E2669000D6ACC /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				EA7D3272207E2680000D6ACC /* noimage@2x.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		F9C4CF34116A95B0DC70B11B /* Frameworks */ = {
@@ -208,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3DA313207DC665003629D8 /* LaunchScreen.storyboard in Resources */,
+				EA7D3273207E2680000D6ACC /* noimage@2x.png in Resources */,
 				EA3DA310207DC665003629D8 /* Assets.xcassets in Resources */,
 				EA3DA30E207DC664003629D8 /* Main.storyboard in Resources */,
 				EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */,
@@ -278,6 +295,7 @@
 				EA3DA308207DC664003629D8 /* AppDelegate.m in Sources */,
 				EA3DA324207DF1FA003629D8 /* MainViewController.m in Sources */,
 				EA3DA32D207DF991003629D8 /* ProtocolList.m in Sources */,
+				EA7D3270207E2466000D6ACC /* ImageCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

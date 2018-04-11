@@ -101,7 +101,10 @@
     // 데이터.
     ViewModel *vm = [dataList objectAtIndex:indexPath.row];
     
-    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",BASE_URL,vm.thumImageURL]]]];
+    [[ImageCache instance] loadFromUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,vm.thumImageURL] callback:^(UIImage *image) {
+        cell.imageView.image = image;
+    }];
+    
     cell.textLabel.text = vm.caption;
     
     return cell;

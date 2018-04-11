@@ -17,6 +17,7 @@
 /// 기본 import 항목
 #import <AFNetworking/AFNetworking.h>
 #import <HTMLReader.h>
+#import "ImageCache.h"
 
 /// URL 기본정보.
 #define BASE_URL @"http://www.gettyimagesgallery.com"

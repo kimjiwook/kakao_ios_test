@@ -14,7 +14,7 @@
 /**
  HTML 분석하기. 최초
  */
-- (void)getImageArray:(void (^)(id ob))complet :(void (^)(NSError *error))fail {
+- (void)getImageArray:(void (^)(id ob))complete :(void (^)(NSError *error))fail {
     // URL 정보.
     NSString *url = [NSString stringWithFormat:@"%@%@",BASE_URL,BASE_URL_GET_PARAM];
     
@@ -71,7 +71,7 @@
             }
         }
         // 완료.
-        complet(listArray);
+        complete(listArray);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         // 에러
