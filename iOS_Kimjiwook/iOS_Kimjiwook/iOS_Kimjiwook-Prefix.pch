@@ -19,6 +19,7 @@
 #import <HTMLReader.h>
 #import "ImageCache.h"
 #import "NSObject+Associating.h"
+#import <Lottie/Lottie.h>
 
 /// URL 기본정보.
 #define BASE_URL @"http://www.gettyimagesgallery.com"

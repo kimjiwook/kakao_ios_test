@@ -8,4 +8,5 @@ target 'iOS_Kimjiwook' do
   # Pods for iOS_Kimjiwook
   pod 'AFNetworking', '~> 3.0'
   pod 'HTMLReader'
+  pod 'lottie-ios'
 end

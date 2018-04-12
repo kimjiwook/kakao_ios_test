@@ -7,11 +7,9 @@
 //
 
 #import "DetailViewController.h"
-#import "ProtocolList.h"
 #import "ViewModel.h"
 
 @interface DetailViewController () {
-    ProtocolList *protocolList;
     DetailViewModel *detailVM;
     AFHTTPSessionManager *manager;
 }
@@ -27,7 +25,7 @@
  초기화와 기본적인 셋팅을 맞는 부분.
  */
 - (void)initData {
-    protocolList = [[ProtocolList alloc] init];
+    self.protocolList = [[ProtocolList alloc] init];
     // 네트워크 생성.
     manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
@@ -61,12 +59,15 @@
  HTML ParserData 호출 후 뿌려주는 부분.
  */
 - (void)requestHTML {
+    [self startLodingView];
     NSString *stringUrl = [NSString stringWithFormat:@"%@%@", BASE_URL, _detailUrl];
-    [protocolList getDetailVM:stringUrl :^(id ob) {
+    [self.protocolList getDetailVM:stringUrl :^(id ob) {
         self->detailVM = (DetailViewModel *)ob;
         [self reloadDetailData];
+        [self stopLodingView];
     } :^(NSError *error) {
         NSLog(@"error : %@",error);
+        [self stopLodingView];
     }];
 }
 
@@ -101,5 +102,4 @@
     // 2. 설명 글 부분.
     self.lbCaption.text = detailVM.caption;
 }
-
 @end

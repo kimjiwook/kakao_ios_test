@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : RootViewController
 @property (nonatomic, strong) NSString *navigationTitle; // 타이틀 정보.
 @property (nonatomic, strong) NSString *detailUrl; // 상세Url 정보.
 @end

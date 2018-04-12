@@ -23,6 +23,9 @@
 		EAC51183207F116000ABD25B /* NSObject+Associating.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC51182207F116000ABD25B /* NSObject+Associating.m */; };
 		EAC51187207F6A2600ABD25B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC51185207F6A2600ABD25B /* DetailViewController.m */; };
 		EAC51188207F6A2600ABD25B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC51186207F6A2600ABD25B /* DetailViewController.xib */; };
+		EAF84746207F78B600AF3E51 /* loding.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF84745207F78B600AF3E51 /* loding.json */; };
+		EAF84748207F7BBA00AF3E51 /* loding1.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF84747207F7BBA00AF3E51 /* loding1.json */; };
+		EAF8474C207F7C8900AF3E51 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF8474B207F7C8900AF3E51 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,10 @@
 		EAC51184207F6A2600ABD25B /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		EAC51185207F6A2600ABD25B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		EAC51186207F6A2600ABD25B /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		EAF84745207F78B600AF3E51 /* loding.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loding.json; sourceTree = "<group>"; };
+		EAF84747207F7BBA00AF3E51 /* loding1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loding1.json; sourceTree = "<group>"; };
+		EAF8474A207F7C8900AF3E51 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		EAF8474B207F7C8900AF3E51 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +143,8 @@
 		EA3DA32A207DF8EB003629D8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EAF8474A207F7C8900AF3E51 /* RootViewController.h */,
+				EAF8474B207F7C8900AF3E51 /* RootViewController.m */,
 				EA3DA321207DF1FA003629D8 /* MainViewController.h */,
 				EA3DA322207DF1FA003629D8 /* MainViewController.m */,
 				EA3DA323207DF1FA003629D8 /* MainViewController.xib */,
@@ -163,6 +172,8 @@
 		EA7D3271207E2669000D6ACC /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EAF84747207F7BBA00AF3E51 /* loding1.json */,
+				EAF84745207F78B600AF3E51 /* loding.json */,
 				EA7D3272207E2680000D6ACC /* noimage@2x.png */,
 			);
 			path = Image;
@@ -238,8 +249,10 @@
 			files = (
 				A319EF25207E5701003B3DCC /* MainTableViewCell.xib in Resources */,
 				EAC51188207F6A2600ABD25B /* DetailViewController.xib in Resources */,
+				EAF84748207F7BBA00AF3E51 /* loding1.json in Resources */,
 				EA3DA313207DC665003629D8 /* LaunchScreen.storyboard in Resources */,
 				EA7D3273207E2680000D6ACC /* noimage@2x.png in Resources */,
+				EAF84746207F78B600AF3E51 /* loding.json in Resources */,
 				EA3DA310207DC665003629D8 /* Assets.xcassets in Resources */,
 				EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */,
 			);
@@ -307,6 +320,7 @@
 				EAC51183207F116000ABD25B /* NSObject+Associating.m in Sources */,
 				EAC51187207F6A2600ABD25B /* DetailViewController.m in Sources */,
 				EA3DA316207DC665003629D8 /* main.m in Sources */,
+				EAF8474C207F7C8900AF3E51 /* RootViewController.m in Sources */,
 				EA3DA308207DC664003629D8 /* AppDelegate.m in Sources */,
 				EA3DA324207DF1FA003629D8 /* MainViewController.m in Sources */,
 				EA3DA32D207DF991003629D8 /* ProtocolList.m in Sources */,

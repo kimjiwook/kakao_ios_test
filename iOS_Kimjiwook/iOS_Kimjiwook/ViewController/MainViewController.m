@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "ProtocolList.h"
 #import "ViewModel.h"
 
 #import "DetailViewController.h"
@@ -15,7 +14,6 @@
 
 @interface MainViewController () {
     NSMutableArray *dataList;
-    ProtocolList *protocolList;
 }
 
 /// 메인으로 사용되는 테이블 뷰.
@@ -32,8 +30,7 @@
  */
 - (void)initData {
     dataList = [[NSMutableArray alloc] init];
-    protocolList = [[ProtocolList alloc] init];
-    
+    self.protocolList = [[ProtocolList alloc] init];
     [self setNavigation];
 }
 
@@ -61,11 +58,15 @@
  HTML ParserData 호출 후 뿌려주는 부분.
  */
 - (void)requestHTML {
-    [protocolList getImageArray:^(id ob) {
+    [self startLodingView];
+    [self.protocolList getImageArray:^(id ob) {
         self->dataList = [(NSMutableArray *)ob mutableCopy];
+        self.tableView.hidden = NO;
         [self.tableView reloadData];
+        [self stopLodingView];
     } :^(NSError *error) {
         NSLog(@"error : %@",error);
+        [self stopLodingView];
     }];
 }
 
@@ -119,5 +120,4 @@
     desc.detailUrl = vm.detailURL;
     [self.navigationController pushViewController:desc animated:YES];
 }
-
 @end
