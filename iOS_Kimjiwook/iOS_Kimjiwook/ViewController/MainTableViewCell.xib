@@ -6,49 +6,48 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="152" id="KGk-i7-Jjw" customClass="MainTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="319" height="152"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="112" id="KGk-i7-Jjw" customClass="MainTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="319" height="151.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="111.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage.png" translatesAutoresizingMaskIntoConstraints="NO" id="0y7-a1-FpJ">
-                        <rect key="frame" x="0.0" y="0.0" width="319" height="100"/>
+                        <rect key="frame" x="4" y="4.5" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="100" id="gtj-0t-vQu"/>
+                            <constraint firstAttribute="width" secondItem="0y7-a1-FpJ" secondAttribute="height" multiplier="1:1" id="Fc3-5q-r6x"/>
+                            <constraint firstAttribute="width" constant="100" id="wJN-Ac-KPw"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTs-nk-OCY">
-                        <rect key="frame" x="8" y="100" width="303" height="51.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="L9o-PW-esl"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTs-nk-OCY">
+                        <rect key="frame" x="112" y="4" width="223" height="100.5"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                         <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0y7-a1-FpJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CAH-ey-U7d"/>
-                    <constraint firstAttribute="bottom" secondItem="MTs-nk-OCY" secondAttribute="bottom" id="G9b-sK-BUi"/>
+                    <constraint firstItem="0y7-a1-FpJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="CAH-ey-U7d"/>
                     <constraint firstAttribute="trailing" secondItem="MTs-nk-OCY" secondAttribute="trailing" constant="8" id="HqD-uh-Qww"/>
-                    <constraint firstItem="MTs-nk-OCY" firstAttribute="top" secondItem="0y7-a1-FpJ" secondAttribute="bottom" id="L0o-Fy-Fna"/>
-                    <constraint firstItem="MTs-nk-OCY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="dse-jB-6ZF"/>
-                    <constraint firstItem="0y7-a1-FpJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oys-Vy-Arg"/>
-                    <constraint firstAttribute="trailing" secondItem="0y7-a1-FpJ" secondAttribute="trailing" id="vef-11-fZ6"/>
+                    <constraint firstItem="MTs-nk-OCY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Xys-ND-TxY"/>
+                    <constraint firstAttribute="bottom" secondItem="MTs-nk-OCY" secondAttribute="bottom" constant="4" id="d7Z-CB-RcH"/>
+                    <constraint firstAttribute="bottom" secondItem="0y7-a1-FpJ" secondAttribute="bottom" constant="4" id="lY3-X1-b3i"/>
+                    <constraint firstItem="0y7-a1-FpJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="oys-Vy-Arg"/>
+                    <constraint firstItem="MTs-nk-OCY" firstAttribute="leading" secondItem="0y7-a1-FpJ" secondAttribute="trailing" constant="8" id="xEu-yT-obL"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="imgView" destination="0y7-a1-FpJ" id="QsB-b3-YEA"/>
                 <outlet property="lbTitle" destination="MTs-nk-OCY" id="Cvf-rT-aNN"/>
             </connections>
-            <point key="canvasLocation" x="-119.5" y="-54"/>
+            <point key="canvasLocation" x="-135.5" y="-168"/>
         </tableViewCell>
     </objects>
     <resources>

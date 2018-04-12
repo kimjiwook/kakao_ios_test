@@ -10,7 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @interface ImageCache() {
-    NSMutableDictionary *cache;
+//    NSMutableDictionary *cache;
 }
 
 @end
@@ -41,106 +41,22 @@
     if (self) {
         // url 캐시 설정
         NSInteger byte = 1024 * 1024;
-        // 메모리 : 10MB, 디스크 : 100MB
+        // 메모리 : 10MB, 디스크 : 100MB (메모리 캐쉬는 ViewModel 에서 따로 할 예정)
         NSURLCache *urlCache = [[NSURLCache alloc] initWithMemoryCapacity:10 * byte diskCapacity:100 * byte diskPath:nil];
         [NSURLCache setSharedURLCache:urlCache];
-        
-        // 메모리 캐시 설정
-        cache = [[NSMutableDictionary alloc] initWithCapacity:100];
     }
     
     return self;
 }
 
+#pragma mark- Document 관련.
 
 /**
- Block 방식의 이미지 가지고 오는 부분.
- @param stringUrl 이미지 호출할 URL
- @param complete 완료시 UIImage 전달.
+ 로컬에 저장되어 있는 이미지 파일가져오기.
+
+ @param stringUrl 이미지 URL
+ @return UIImage
  */
-- (void)loadFromUrl:(NSString *)stringUrl callback:(void (^)(UIImage *image))complete {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
-    dispatch_async(queue, ^{
-        // NSURL 변환.
-        NSURL *url = [NSURL URLWithString:stringUrl];
-        
-        UIImage *image = nil;
-        if (url != nil) {
-            NSString *key = [self md5:stringUrl];
-            
-            // 1. 메모리에서 먼저 검색
-            UIImage *cachedImage = [self loadFromMemory:key];
-            
-            // 2. 메모리에 없을 경우 Document에서 검색
-            if (cachedImage == nil) {
-                cachedImage = [self getDocumentCache:key];
-                
-                // 값이 있다면 메모리에 저장.
-                if (cachedImage != nil) {
-                    [self saveToMemory:cachedImage withKey:key];
-                }
-            }
-            
-            // 3. 캐시된 이미지가 없을 경우 url에서 직접 가져옴
-            if (cachedImage != nil) {
-                image = cachedImage;
-            } else {
-                NSData *imageData = [NSData dataWithContentsOfURL:url];
-                image = [UIImage imageWithData:imageData];
-                
-                // 메모리와 디스크 캐시에 추가
-                [self saveToMemory:image withKey:key];
-                [self setDocumentCache:image withKey:key];
-            }
-        }
-        
-        // #. 값이 없을때, 디폴트 이미지 전달해 준다.
-        if (image == nil) {
-            image = [UIImage imageNamed:@"noimage"];
-        }
-        
-        // 마무리. 메인에서 전달해주기.
-        dispatch_async(dispatch_get_main_queue(), ^{
-            complete(image);
-        });
-    });
-}
-
-
-/**
- 이미지가 있는지 캐쉬들에 검사하기. (있다면 전달.)
- @param stringUrl
- @return
- */
-- (UIImage *)getImageUrl:(NSString *)stringUrl {
-    // NSURL 변환.
-    NSURL *url = [NSURL URLWithString:stringUrl];
-    
-    UIImage *image = nil;
-    if (url != nil) {
-        NSString *key = [self md5:stringUrl];
-        
-        // 1. 메모리에서 먼저 검색
-        UIImage *cachedImage = [self loadFromMemory:key];
-        
-        // 2. 메모리에 없을 경우 Document에서 검색
-        if (cachedImage == nil) {
-            cachedImage = [self getDocumentCache:key];
-            
-            // 값이 있다면 메모리에 저장.
-            if (cachedImage != nil) {
-                [self saveToMemory:cachedImage withKey:key];
-            }
-        }
-        
-        if (cachedImage != nil) {
-            image = cachedImage;
-        }
-    }
-    
-    return image;
-}
-
 - (UIImage *)getDocumentImageUrl:(NSString *)stringUrl {
     // NSURL 변환.
     NSURL *url = [NSURL URLWithString:stringUrl];
@@ -154,35 +70,20 @@
             image = cachedImage;
         }
     }
-    
     return image;
 }
 
 /**
- 로컬과 메모리에 저장한다.
- @param stringUrl
- @param image
+ 로컬에 저장한다.
+ @param stringUrl 이미지 URL
+ @param image UIImage
  */
-- (void)setCached:(NSString *)stringUrl image:(UIImage *)image {
+- (void)setDocumentImageUrl:(NSString *)stringUrl image:(UIImage *)image {
     NSString *key = [self md5:stringUrl];
-    // 메모리와 디스크 캐시에 추가
-    [self saveToMemory:image withKey:key];
+    // 디스크 캐시에 추가
     [self setDocumentCache:image withKey:key];
 }
 
-#pragma mark- MD5를 통한 URL 변환.
-// url을 사용해서 md5 해시 문자열 생성
--(NSString*)md5:(NSString *)str {
-    const char *cStr = [str UTF8String];
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5( cStr, strlen(cStr), result);
-    NSMutableString *string = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
-        [string appendFormat:@"%02X",result[i]];
-    return string;
-}
-
-#pragma mark- Document 관련.
 - (UIImage *)getDocumentCache:(NSString *)key {
     // 경로 추출.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -203,22 +104,16 @@
     [UIImagePNGRepresentation(image) writeToFile:path atomically:YES];
 }
 
-#pragma mark- Memory 관련.
-- (UIImage *)loadFromMemory:(NSString *)key {
-    if (cache == nil) return nil;
-    
-    // Cache 에서 가져오기
-    UIImage *cachedImage = [cache objectForKey:key];
-    return cachedImage;
-}
-
-- (void)saveToMemory:(UIImage *)image withKey:(NSString *)key {
-    if (cache == nil) {
-        cache = [[NSMutableDictionary alloc] initWithCapacity:100];
-    }
-    
-    // Cache 에 저장하기.
-    [cache setObject:image forKey:key];
+#pragma mark- MD5를 통한 URL 변환.
+// url을 사용해서 md5 해시 문자열 생성
+-(NSString*)md5:(NSString *)str {
+    const char *cStr = [str UTF8String];
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5( cStr, strlen(cStr), result);
+    NSMutableString *string = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [string appendFormat:@"%02X",result[i]];
+    return string;
 }
 
 @end
