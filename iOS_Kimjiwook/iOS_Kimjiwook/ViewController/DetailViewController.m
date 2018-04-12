@@ -64,7 +64,6 @@
     [self.protocolList getDetailVM:stringUrl :^(id ob) {
         self->detailVM = (DetailViewModel *)ob;
         [self reloadDetailData];
-        [self stopLodingView];
     } :^(NSError *error) {
         NSLog(@"error : %@",error);
         [self stopLodingView];
@@ -73,18 +72,21 @@
 
 - (void)reloadDetailData {
     if (!detailVM) {
+        [self stopLodingView];
         return;
     }
     
     // 1. 이미지 영역 부분.
     if (detailVM.detailImage) {
         self.imageView.image = detailVM.detailImage;
+        [self stopLodingView];
     } else {
         NSString *stringUrl = [NSString stringWithFormat:@"%@%@", BASE_URL, _detailUrl];
         UIImage *documentCachedImage = [[ImageCache instance] getDocumentImageUrl:stringUrl];
         if (documentCachedImage) {
             self.imageView.image = documentCachedImage;
             detailVM.detailImage = documentCachedImage; // 메모리 저장.
+            [self stopLodingView];
         } else {
             NSString *imageUrl = [NSString stringWithFormat:@"%@%@",BASE_URL,detailVM.imageURL];
             [manager GET:imageUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -93,7 +95,9 @@
                 // #. 메모리, 도큐멘트 저장 로직.
                 self->detailVM.detailImage = self.imageView.image;
                 [[ImageCache instance] setDocumentImageUrl:imageUrl image:self->detailVM.detailImage];
+                [self stopLodingView];
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [self stopLodingView];
                 NSLog(@"%@",error);
             }];
         }

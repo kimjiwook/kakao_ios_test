@@ -26,6 +26,7 @@
 		EAF84746207F78B600AF3E51 /* loding.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF84745207F78B600AF3E51 /* loding.json */; };
 		EAF84748207F7BBA00AF3E51 /* loding1.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF84747207F7BBA00AF3E51 /* loding1.json */; };
 		EAF8474C207F7C8900AF3E51 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAF8474B207F7C8900AF3E51 /* RootViewController.m */; };
+		EAF8474E207F829B00AF3E51 /* loding2.json in Resources */ = {isa = PBXBuildFile; fileRef = EAF8474D207F829B00AF3E51 /* loding2.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		EAF84747207F7BBA00AF3E51 /* loding1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loding1.json; sourceTree = "<group>"; };
 		EAF8474A207F7C8900AF3E51 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		EAF8474B207F7C8900AF3E51 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		EAF8474D207F829B00AF3E51 /* loding2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loding2.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 		EA7D3271207E2669000D6ACC /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EAF8474D207F829B00AF3E51 /* loding2.json */,
 				EAF84747207F7BBA00AF3E51 /* loding1.json */,
 				EAF84745207F78B600AF3E51 /* loding.json */,
 				EA7D3272207E2680000D6ACC /* noimage@2x.png */,
@@ -252,6 +255,7 @@
 				EAF84748207F7BBA00AF3E51 /* loding1.json in Resources */,
 				EA3DA313207DC665003629D8 /* LaunchScreen.storyboard in Resources */,
 				EA7D3273207E2680000D6ACC /* noimage@2x.png in Resources */,
+				EAF8474E207F829B00AF3E51 /* loding2.json in Resources */,
 				EAF84746207F78B600AF3E51 /* loding.json in Resources */,
 				EA3DA310207DC665003629D8 /* Assets.xcassets in Resources */,
 				EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */,
