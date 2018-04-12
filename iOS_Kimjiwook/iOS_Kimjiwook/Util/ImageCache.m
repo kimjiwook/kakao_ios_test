@@ -59,7 +59,7 @@
  @param complete 완료시 UIImage 전달.
  */
 - (void)loadFromUrl:(NSString *)stringUrl callback:(void (^)(UIImage *image))complete {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
     dispatch_async(queue, ^{
         // NSURL 변환.
         NSURL *url = [NSURL URLWithString:stringUrl];
@@ -104,6 +104,70 @@
             complete(image);
         });
     });
+}
+
+
+/**
+ 이미지가 있는지 캐쉬들에 검사하기. (있다면 전달.)
+ @param stringUrl
+ @return
+ */
+- (UIImage *)getImageUrl:(NSString *)stringUrl {
+    // NSURL 변환.
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    
+    UIImage *image = nil;
+    if (url != nil) {
+        NSString *key = [self md5:stringUrl];
+        
+        // 1. 메모리에서 먼저 검색
+        UIImage *cachedImage = [self loadFromMemory:key];
+        
+        // 2. 메모리에 없을 경우 Document에서 검색
+        if (cachedImage == nil) {
+            cachedImage = [self getDocumentCache:key];
+            
+            // 값이 있다면 메모리에 저장.
+            if (cachedImage != nil) {
+                [self saveToMemory:cachedImage withKey:key];
+            }
+        }
+        
+        if (cachedImage != nil) {
+            image = cachedImage;
+        }
+    }
+    
+    return image;
+}
+
+- (UIImage *)getDocumentImageUrl:(NSString *)stringUrl {
+    // NSURL 변환.
+    NSURL *url = [NSURL URLWithString:stringUrl];
+    
+    UIImage *image = nil;
+    if (url != nil) {
+        NSString *key = [self md5:stringUrl];
+        UIImage *cachedImage = [self getDocumentCache:key];
+        
+        if (cachedImage != nil) {
+            image = cachedImage;
+        }
+    }
+    
+    return image;
+}
+
+/**
+ 로컬과 메모리에 저장한다.
+ @param stringUrl
+ @param image
+ */
+- (void)setCached:(NSString *)stringUrl image:(UIImage *)image {
+    NSString *key = [self md5:stringUrl];
+    // 메모리와 디스크 캐시에 추가
+    [self saveToMemory:image withKey:key];
+    [self setDocumentCache:image withKey:key];
 }
 
 #pragma mark- MD5를 통한 URL 변환.
