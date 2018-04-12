@@ -10,6 +10,7 @@
 #import "ProtocolList.h"
 #import "ViewModel.h"
 
+#import "DetailViewController.h"
 #import "MainTableViewCell.h"
 
 @interface MainViewController () {
@@ -32,6 +33,8 @@
 - (void)initData {
     dataList = [[NSMutableArray alloc] init];
     protocolList = [[ProtocolList alloc] init];
+    
+    [self setNavigation];
 }
 
 - (void)viewDidLoad {
@@ -43,6 +46,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+/**
+ 네비게이션 정보.
+ */
+- (void)setNavigation {
+    self.title = @"iOS_김지욱";
 }
 
 
@@ -99,6 +110,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    // 데이터.
+    ViewModel *vm = [dataList objectAtIndex:indexPath.row];
+    
+    // 상세화면 이동
+    DetailViewController *desc = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    desc.navigationTitle = vm.caption;
+    desc.detailUrl = vm.detailURL;
+    [self.navigationController pushViewController:desc animated:YES];
 }
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailViewController : UIViewController
-
+@property (nonatomic, strong) NSString *navigationTitle; // 타이틀 정보.
+@property (nonatomic, strong) NSString *detailUrl; // 상세Url 정보.
 @end

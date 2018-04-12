@@ -8,6 +8,7 @@
 
 #import "ViewModel.h"
 
+/// 1. 메인.
 @implementation ViewModel
 - (id)init {
     self = [super init];
@@ -20,12 +21,17 @@
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-    ViewModel *vm = [[self class] allocWithZone:zone];
-    vm->_detailURL = self->_detailURL;
-    vm->_thumImageURL = self->_thumImageURL;
-    vm->_caption = self->_caption;
-    vm->_thumImage = self->_thumImage;
-    return vm;
+@end
+
+/// 2. 상세
+@implementation DetailViewModel
+- (id)init {
+    self = [super init];
+    if (self) {
+        _imageURL = @"";
+        _caption = @"";
+        _detailImage = nil;
+    }
+    return self;
 }
 @end
