@@ -20,6 +20,7 @@
 		EA3DA330207DFC4E003629D8 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EA3DA32F207DFC4E003629D8 /* ViewModel.m */; };
 		EA7D3270207E2466000D6ACC /* ImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7D326F207E2466000D6ACC /* ImageCache.m */; };
 		EA7D3273207E2680000D6ACC /* noimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA7D3272207E2680000D6ACC /* noimage@2x.png */; };
+		EAAA1F9120802E6B00E97B1C /* loding3.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAA1F9020802E6B00E97B1C /* loding3.json */; };
 		EAC51183207F116000ABD25B /* NSObject+Associating.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC51182207F116000ABD25B /* NSObject+Associating.m */; };
 		EAC51187207F6A2600ABD25B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC51185207F6A2600ABD25B /* DetailViewController.m */; };
 		EAC51188207F6A2600ABD25B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAC51186207F6A2600ABD25B /* DetailViewController.xib */; };
@@ -54,6 +55,7 @@
 		EA7D326E207E2466000D6ACC /* ImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
 		EA7D326F207E2466000D6ACC /* ImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCache.m; sourceTree = "<group>"; };
 		EA7D3272207E2680000D6ACC /* noimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "noimage@2x.png"; sourceTree = "<group>"; };
+		EAAA1F9020802E6B00E97B1C /* loding3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loding3.json; sourceTree = "<group>"; };
 		EAC51181207F116000ABD25B /* NSObject+Associating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Associating.h"; sourceTree = "<group>"; };
 		EAC51182207F116000ABD25B /* NSObject+Associating.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Associating.m"; sourceTree = "<group>"; };
 		EAC51184207F6A2600ABD25B /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		EA7D3271207E2669000D6ACC /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EAAA1F9020802E6B00E97B1C /* loding3.json */,
 				EAF8474D207F829B00AF3E51 /* loding2.json */,
 				EAF84747207F7BBA00AF3E51 /* loding1.json */,
 				EAF84745207F78B600AF3E51 /* loding.json */,
@@ -258,6 +261,7 @@
 				EAF8474E207F829B00AF3E51 /* loding2.json in Resources */,
 				EAF84746207F78B600AF3E51 /* loding.json in Resources */,
 				EA3DA310207DC665003629D8 /* Assets.xcassets in Resources */,
+				EAAA1F9120802E6B00E97B1C /* loding3.json in Resources */,
 				EA3DA325207DF1FA003629D8 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -29,7 +29,7 @@
  */
 - (void)startLodingView {
     if (!self.lotAnimationView) {
-        self.lotAnimationView = [LOTAnimationView animationNamed:@"loding2"];
+        self.lotAnimationView = [LOTAnimationView animationNamed:@"loding3"];
         self.lotAnimationView.contentMode = UIViewContentModeScaleAspectFit;
         self.lotAnimationView.loopAnimation = YES;
     }

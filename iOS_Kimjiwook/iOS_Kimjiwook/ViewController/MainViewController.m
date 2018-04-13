@@ -36,6 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"시작점.");
     [self initData];
     [self requestHTML];
 }
