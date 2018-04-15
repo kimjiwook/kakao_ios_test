@@ -53,6 +53,8 @@
     if (_navigationTitle) {
         self.title = _navigationTitle;
     }
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.31 green:0.25 blue:0.21 alpha:1.0f]];
 }
 
 /**

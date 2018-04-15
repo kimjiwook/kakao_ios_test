@@ -60,9 +60,13 @@
             _imgView.associatedObject =
             [manager GET:imageUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
+                self->_imgView.alpha = 0.0f;
                 self->_imgView.image = [UIImage imageWithData:(NSData *)responseObject];
-                // #. 메모리, 도큐멘트 저장 로직.
                 vm.thumImage = self->_imgView.image;
+                // #. 메모리, 도큐멘트 저장 로직.
+                [UIView animateWithDuration:0.7 animations:^{
+                    self->_imgView.alpha = 1.0f;
+                }];
                 [[ImageCache instance] setDocumentImageUrl:imageUrl image:vm.thumImage];
                 
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
