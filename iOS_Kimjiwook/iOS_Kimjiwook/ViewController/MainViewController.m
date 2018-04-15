@@ -52,9 +52,12 @@
  */
 - (void)setNavigation {
     self.title = @"iOS_김지욱";
-//    =[NSForegroundColorAttributeName:UIColor.whiteColor()]
-//    [self.navigationController.navigationBar setTitleTextAttributes:@{}];
+    
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.31 green:0.25 blue:0.21 alpha:1.0f]];
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor whiteColor], NSForegroundColorAttributeName
+                                                                      , nil]];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 }
 
 
